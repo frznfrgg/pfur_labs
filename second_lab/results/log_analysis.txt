@@ -1,0 +1,3 @@
+Total successful requests: 2
+Total data transferred: 3584 bytes
+Unique IP addresses: 2
