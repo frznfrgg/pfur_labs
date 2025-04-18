@@ -1,20 +1,44 @@
-from typing import List, Union
+from typing import List, NoReturn, Union
 
 
 class Student:
+    """Simple student class"""
+
     def __init__(self, name: str, student_id: Union[str, int], grades: List[int]):
+        """Initializes a student object
+
+        Args:
+            name (str): student name
+            student_id (Union[str, int]): student id
+            grades (List[int]): student grades
+        """
         self.name = name
         self.student_id = student_id
         self.grades = grades
 
     def add_grade(self, grade: int):
+        """Adds a grade to students profile
+
+        Args:
+            grade (int): a grade to add
+        """
         if isinstance(grade, int) and 0 <= grade <= 10:
             self.grades.append(grade)
 
-    def get_average(self):
+    def get_average(self) -> float:
+        """Calculates the average grade of the student
+
+        Returns:
+            float: mean grade
+        """
         return sum(self.grades) / len(self.grades)
 
-    def display_info(self):
+    def display_info(self) -> NoReturn:
+        """Prints students statistics
+
+        Returns:
+            NoReturn:
+        """
         print(
             "Name:",
             self.name,
